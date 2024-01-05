@@ -1,12 +1,12 @@
-const mouse = document.querySelector('.mouse');
-const trash = document.querySelector('.trash');
+const sonic = document.querySelector('.sonic');
+const villain = document.querySelector('.villain');
 const gameover = document.querySelector('.gameover');
 
 const jump = () => {
-    mouse.classList.add('jump');
+    sonic.classList.add('jump');
 
     setTimeout(() => {
-        mouse.classList.remove('jump');
+        sonic.classList.remove('jump');
     }, 500);
 }
 
@@ -14,23 +14,23 @@ const loop = setInterval(() => {
 
     console.log('loop')
 
-    const trashPosition = trash.offsetLeft;
-    const mousePosition = +window.getComputedStyle(mouse).bottom.replace('px', '');
+    const villainPosition = villain.offsetLeft;
+    const sonicPosition = +window.getComputedStyle(sonic).bottom.replace('px', '');
 
-    console.log(mousePosition);
+    console.log(sonicPosition);
 
-    if (trashPosition <= 135 && trashPosition > 0 && mousePosition < 80) {
+    if (villainPosition <= 135 && villainPosition > 0 && sonicPosition < 80) {
 
-      trash.style.animation = 'none';
-      trash.style.left = '${trashPosition}px';
+      villain.style.animation = 'none';
+      villain.style.left = '${villainPosition}px';
 
-      mouse.style.animation = 'none';
-      mouse.style.bottom = '${mousePosition}px';
+      sonic.style.animation = 'none';
+      sonic.style.bottom = '${sonicPosition}px';
 
-      mouse.src = './images/mousedead.png'
-      mouse.style.width = '130px'
-      mouse.style.bottom = '-20px'
-      mouse.style.marginLeft = '50px'
+      sonic.src = './images/sonicover.gif'
+      sonic.style.width = '250px'
+      sonic.style.bottom = '-40px'
+      sonic.style.marginLeft = '0px'
 
       gameover.style.display = 'block';
 
